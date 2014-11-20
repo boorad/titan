@@ -172,6 +172,7 @@
                             </includes>
                         </fileset>
                     </testSources>
+                    <source/>
                 </configuration>
                 <executions>
                     <execution>

@@ -15,7 +15,6 @@
         <hadoop.version>2.2.0</hadoop.version>
         <hbase.version.base>0.98.3</hbase.version.base>
         <hbase.version>${hbase.version.base}-hadoop2</hbase.version>
-        <!-- <hadoop.version>2.2.0</hadoop.version> -->
         <jruby.version>1.6.8</jruby.version>
         <zookeeper.version>3.4.6</zookeeper.version>
         <top.level.basedir>${project.parent.parent.basedir}</top.level.basedir>
@@ -244,6 +243,57 @@
                 </dependencies>
             </dependencyManagement>
             
+        </profile>
+
+        <profile>
+            <id>mapr-hadoop-2</id>
+
+            <activation>
+                <property>
+                    <name>hadoop.profile</name>
+                    <value>mapr-1.0</value>
+                </property>
+            </activation>
+
+            <properties>
+                <hbase.version>0.98.4-mapr-1408-m7-4.0.1</hbase.version>
+                <mapr.fs.version>4.0.1-mapr</mapr.fs.version>
+                <hadoop.version>2.4.1-mapr-1408</hadoop.version>
+            </properties>
+            <repositories>
+                <repository>
+                    <id>mapr-releases</id>
+                    <url>http://repository.mapr.com/maven/</url>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                </repository>
+            </repositories>
+            <dependencies>
+                <dependency>
+                    <groupId>com.mapr.fs</groupId>
+                    <artifactId>mapr-hbase</artifactId>
+                    <version>${mapr.fs.version}</version>
+                </dependency>
+            </dependencies>
+            <dependencyManagement>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.mapr.fs</groupId>
+                        <artifactId>mapr-hbase</artifactId>
+                        <version>${mapr.fs.version}</version>
+                        <exclusions>
+                            <exclusion>
+                                <groupId>org.json</groupId>
+                                <artifactId>json</artifactId>
+                            </exclusion>
+                        </exclusions>
+                    </dependency>
+                </dependencies>
+            </dependencyManagement>
         </profile>
     </profiles>
 </project>
