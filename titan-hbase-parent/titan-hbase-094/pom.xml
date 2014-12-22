@@ -393,11 +393,6 @@
                     <artifactId>mapr-hbase</artifactId>
                     <version>${mapr.fs.version}</version>
                 </dependency>
-                <dependency>
-                    <groupId>com.mapr.util</groupId>
-                    <artifactId>central-logging</artifactId>
-                    <version>${mapr.fs.version}</version>
-                </dependency>
             </dependencies>
             <dependencyManagement>
                 <dependencies>
