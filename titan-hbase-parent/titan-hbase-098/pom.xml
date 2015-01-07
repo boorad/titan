@@ -259,6 +259,7 @@
                 <hbase.version>0.98.4-mapr-1408-m7-4.0.1</hbase.version>
                 <mapr.fs.version>4.0.1-mapr</mapr.fs.version>
                 <hadoop.version>2.4.1-mapr-1408</hadoop.version>
+                <zookeeper.version>3.4.5-mapr-1406</zookeeper.version>
             </properties>
             <repositories>
                 <repository>

@@ -6,6 +6,9 @@ MAPR_HADOOP_VERSION="2.4.1-mapr-1408"
 OTHER_HBASE_VERSION="0.98.2"
 MAPR_HBASE_VERSION="0.98.4-mapr-1408-m7-4.0.1"
 
+OTHER_ZOOKEEPER_VERSION="3.4.6"
+MAPR_ZOOKEEPER_VERSION="3.4.5-mapr-1406"
+
 cd lib/
 
 ##
@@ -33,3 +36,8 @@ done
 cp ~/.m2/repository/com/mapr/fs/mapr-hbase/4.0.1-mapr/*.jar .
 cp ~/.m2/repository/com/mapr/hadoop/maprfs/4.0.1-mapr/*.jar .
 cp ~/.m2/repository/com/mapr/fs/libprotodefs/4.0.1-mapr/*.jar .
+
+rm *zookeeper*$OTHER_ZOOKEEPER_VERSION*
+
+cp ~/.m2/repository/org/apache/zookeeper/zookeeper/$MAPR_ZOOKEEPER_VERSION/.jar .
+
