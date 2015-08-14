@@ -64,6 +64,9 @@ CP=`abs_path`/../conf
 CP=$CP:$(find -L `abs_path`/../lib/ -name '*.jar' | tr '\n' ':')
 CP=$CP:$(find -L `abs_path`/../ext/ -name '*.jar' | tr '\n' ':')
 
+# add yarn classpath, exclude some nonexisting ones
+CP=$CP:$(yarn classpath | sed 's/\/contrib\/capacity-scheduler\/\*.jar/withthis/g')
+
 # Check some Hadoop-related environment variables
 if [ -n "${HADOOP_PREFIX:-}" ]; then
     # Check Hadoop 2 first
